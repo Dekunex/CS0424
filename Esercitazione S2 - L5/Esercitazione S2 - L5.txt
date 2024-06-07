@@ -1,0 +1,81 @@
+#include <stdio.h>   /* da includere " #include <strng.h> "" per utilizzare la libreria adatta per svolgere determinate azioni, anche se non neccessarie all'esecuzione del codice *\
+					
+
+void menu ();
+void moltiplica ();   		
+void dividi ();      	 	
+void ins_string();    		
+
+
+int main () 6
+
+{
+	char scelta = {'\0'};    
+	menu ();
+	scanf ("%d", &scelta);   /* utilizzare "%c" dato che la risposta si tratta di un carattere *\
+
+	switch (scelta)
+	{
+		case 'A': 		/* da aggiungere anche " case 'a' " alla riga sottostante se si vuole includere la minuscola per non avere errori di esecuzione *\
+		moltiplica();
+		break;
+		case 'B':		/* da aggiungere anche " case'b' " alla riga sottostante se si vuole includere la minuscola per non avere errori di esecuzione *\
+                dividi();
+                break;	
+		case 'C':		/* da aggiungere anche " case 'c' " alla riga sottostante se si vuole includere la minuscola per non avere errori di esecuzione *\
+                ins_string();		
+                break;                  
+	}                   /* nel caso di risposta che non comprendono a, b, c inserire " default; " e nella riga sottostante " prinf("inserisci un carattere corretto;\n") " scelta= 0; " *\
+                              
+return 0;
+
+}
+
+
+void menu ()
+{
+	printf ("Benvenuto, sono un assitente digitale, posso aiutarti a sbrigare alcuni compiti\n");
+	printf ("Come posso aiutarti?\n");
+	printf ("A >> Moltiplicare due numeri\nB >> Dividere due numeri\nC >> Inserire una stringa\n");
+	
+}
+
+
+void moltiplica ()
+{
+	short int  a,b = 0;    /* voce short non neccessaria, inserire "int a, b; " *\
+	printf ("Inserisci i due numeri da moltiplicare:");
+	scanf ("%f", &a); 			/* errore ortografico, il corretto è ("%d", &a) *\
+	scanf ("%d", &b);			
+
+	short int prodotto = a * b;
+
+	printf ("Il prodotto tra %d e %d e': %d", a,b,prodotto);  /* aggiungere  "\n" prima della chiusura delle virgolette, per identificare un testo  *\
+}
+
+
+void dividi ()
+{
+        int  a,b = 0;  /* a, b sono numeri interi variabili inserire solamente a, b; *\
+        printf ("Inserisci il numeratore:");
+        scanf ("%d", &a);
+	printf ("Inserisci il denumeratore:"); 	/* errore ortografico  " denominatore " *\
+        scanf ("%d", &b);
+
+        int divisione = a % b; 		/* errore ortografico inserire " / " al posto di " % " *\
+
+        printf ("La divisione tra %d e %d e': %d", a,b,divisione);  /* sarebbe corretto inserire " la divisione tra &a e &b è : % *\
+}
+
+
+
+
+
+void ins_string () 
+{
+	char stringa[10]; 
+        printf ("Inserisci la stringa:"); /* aggiungere  "\n"   prima della chiusura delle virgolette, per identificare un testo  *\
+
+        scanf ("%s", &stringa);
+}
+
